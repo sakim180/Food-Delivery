@@ -7,35 +7,35 @@ export const StoreContext=createContext(null);
 
 
 const StoreContextProvider=(props)=>{
-const [itemCount,setItemCount]=useState({})
+const [cartItems,setCartItems]=useState({})
 
 
 function addItem(itemId){
 
 
-   if(!itemCount[itemId]){
+   if(!cartItems[itemId]){
     
-     setItemCount((prev)=>({...prev,[itemId]:1}));
+     setCartItems((prev)=>({...prev,[itemId]:1}));
 
    }
    else{
    
-    setItemCount((prev)=>({...prev,[itemId]:prev[itemId]+1}))
+    setCartItems((prev)=>({...prev,[itemId]:prev[itemId]+1}))
    }
 }
 function removeItem(itemId){
- setItemCount((prev)=>({...prev,[itemId]:prev[itemId]-1}))
+ setCartItems((prev)=>({...prev,[itemId]:prev[itemId]-1}))
 }
 useEffect(()=>{
- console.log(itemCount)
-},[itemCount])
+ console.log("cartitems",cartItems)
+},[cartItems])
 
 
 const contextValue={
   food_list,
   addItem,
-  itemCount,
-  setItemCount,
+  cartItems,
+  setCartItems,
   removeItem
 } 
 

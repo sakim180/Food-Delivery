@@ -11,7 +11,7 @@ const App = () => {
   const [login,setLogin]=useState(false);
   return <>
 
-  {login===true?<Login/>:<></>}
+  {login===true?<Login setLogin={setLogin}/>:<></>}
     <div className="app">
     
       <Nav setLogin={setLogin}/>
