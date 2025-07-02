@@ -6,7 +6,10 @@ import { useEffect } from "react";
 export const StoreContext=createContext(null);
 
 
+
 const StoreContextProvider=(props)=>{
+  const [token,settoken]=useState("");
+ 
 const [cartItems,setCartItems]=useState({})
 
 function addItem(itemId){
@@ -45,8 +48,16 @@ const contextValue={
   cartItems,
   setCartItems,
   removeItem,
-  getTotalCartAmount
+  getTotalCartAmount,token,settoken
 } 
+
+useEffect(()=>{
+  
+  if(localStorage.getItem("token")){
+    settoken(localStorage.getItem("token"))
+
+  }
+},[])
 
 return (
  <StoreContext.Provider value={contextValue}>
