@@ -29,7 +29,7 @@ app.use(bodyParser.json())
 app.use(express.urlencoded({ extended: true }));
 
 //routes endpoint
-app.use('/get',(req,res)=>{
+app.use('/',(req,res)=>{
   res.json({message:true})
 })
 app.use('/api/food',foodRouter)
