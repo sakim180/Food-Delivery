@@ -1,4 +1,4 @@
-import './PaymentVerify.css'
+import './paymentVerify.css'
 import React, { useContext, useEffect } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import { StoreContext } from '../../Context/StoreContex';
