@@ -19,7 +19,7 @@ connectdb()
 
 
 app.use(cors({
-  origin: 'https://food-delivery-dun-chi.vercel.app/'
+  origin: 'https://food-delivery-dun-chi.vercel.app'
 }));
 
 //middleware
