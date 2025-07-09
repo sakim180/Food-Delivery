@@ -18,30 +18,9 @@ connectdb()
 
 
 
-const allowedOrigins = [
-  'http://localhost:5173',
-  'https://food-delivery-dun-chi.vercel.app/'
-];
-
-// ✅ CORS middleware config
-const corsOptions = {
-  origin: function (origin, callback) {
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      console.log('❌ Blocked by CORS:', origin);
-      callback(new Error('Not allowed by CORS'));
-    }
-  },
-  credentials: true,
-};
-
-app.use(cors(corsOptions));
-
-// ✅ Handle preflight
-app.options('*', cors(corsOptions));
-
-
+app.use(cors({
+  origin: 'https://food-delivery-dun-chi.vercel.app'
+}));
 
 //middleware
 app.use(express.json())
