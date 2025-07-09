@@ -29,9 +29,9 @@ app.use(bodyParser.json())
 app.use(express.urlencoded({ extended: true }));
 
 //routes endpoint
-app.use('/',(req,res)=>{
-  res.json({message:true})
-})
+app.get('/', (req, res) => {
+  res.json({ message: true, success: "ffg" });
+});
 app.use('/api/food',foodRouter)
 app.use('/api/auth',router)
 app.use("/api/cart",cartRouter)
